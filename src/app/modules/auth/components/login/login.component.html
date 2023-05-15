@@ -1,0 +1,41 @@
+<div class="login">
+  <div class="login__header">
+    <h3 class="login__header-title">
+      Login
+    </h3>
+    <p class="login__header-description">
+      Login to your account
+    </p>
+  </div>
+
+  <form>
+    <app-input
+      [formControl]="email"
+      [title]="'Email'"
+      [placeholder]="'Ex.'"
+      [type]="'email'"
+      [validationMessage]="'Please enter a valid email address'"
+      [errorMessage]="'Email is required'"
+    ></app-input>
+
+    <app-input
+      [formControl]="password"
+      [type]="'password'"
+      [title]="'Password'"
+      [validationMessage]="'Please enter a valid password'"
+      [errorMessage]="'Password is required'"
+    ></app-input>
+  </form>
+
+  <div class="login__forgot-password">
+    <button mat-button color="primary">Forgot password ?</button>
+  </div>
+
+  <div class="login__button">
+    <button mat-raised-button color="primary" (click)="onClickLogin()">Login</button>
+  </div>
+
+  <div class="login__registration-button">
+    <button mat-stroked-button color="primary" (click)="onClickRegistration()">Register</button>
+  </div>
+</div>

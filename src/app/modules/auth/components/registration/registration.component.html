@@ -1,0 +1,54 @@
+<div class="registration">
+  <div class="registration__header">
+    <h3 class="registration__header-title">
+      Create an Account
+    </h3>
+    <p class="registration__header-description">
+      Create an Account to get access to all the features of our site.
+    </p>
+  </div>
+
+  <form>
+    <app-input
+     [formControl]="authForm.get('first_name')"
+     [title]="'First Name'"
+     [errorMessage]="'First Name is required'"
+    ></app-input>
+
+    <app-input
+      [formControl]="authForm.get('last_name')"
+      [title]="'Last Name'"
+      [errorMessage]="'Last Name is required'"
+    ></app-input>
+
+    <app-input
+      [formControl]="email"
+      [title]="'Email'"
+      [type]="'email'"
+      [validationMessage]="'Please enter a valid email address'"
+      [errorMessage]="'Email is required'"
+    ></app-input>
+
+    <app-input
+      [formControl]="password"
+      [type]="'password'"
+      [title]="'Password'"
+      [validationMessage]="'Please enter a valid password'"
+      [errorMessage]="'Password is required'"
+    ></app-input>
+
+    <app-input
+      [formControl]="authForm.get('phone')"
+      [title]="'Phone'"
+      [type]="'phone'"
+    ></app-input>
+  </form>
+
+  <div class="registration__button">
+    <button mat-raised-button color="primary" (click)="onClickRegistration()">Register</button>
+  </div>
+
+  <div class="registration__login-button">
+    <button mat-stroked-button color="primary" (click)="onClickLogin()">Login</button>
+  </div>
+</div>
